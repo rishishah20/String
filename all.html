@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27-01-2025</title>
+</head>
+<body>
+    <h1>Question 1</h1>
+    <p class="result" id="upperCaseString"></p>
+    <p class="result" id="indexOfAwesome"></p>
+    <p class="result" id="replacedString"></p>
+    <p class="result" id="firstTenCharacters"></p>
+
+    <script>
+        const originalString = "JavaScript is awesome!";
+        const upperCaseString = originalString.toUpperCase();
+        const indexOfAwesome = originalString.indexOf("awesome");
+        const replacedString = originalString.replace("awesome", "fun");
+        const firstTenCharacters = originalString.substring(0, 10);
+
+        document.getElementById('upperCaseString').innerText = "Uppercase String: " + upperCaseString;
+        document.getElementById('indexOfAwesome').innerText = "Index of 'awesome': " + indexOfAwesome;
+        document.getElementById('replacedString').innerText = "Replaced String: " + replacedString;
+        document.getElementById('firstTenCharacters').innerText = "First 10 Characters: " + firstTenCharacters;
+    </script>
+
+    <h1> Question 2</h1>
+    <p id="demo"></p>
+    <script>
+        const name = 'Alice';
+        const age = 25;
+        const city = 'New York';
+
+        const message = `Hi, I am ${name}. I am ${age} years old and live in ${city}.`;
+
+        document.getElementById('demo').textContent = message;
+
+    </script>
+
+    <h1>Question 3</h1>
+    <p id="demo1"></p>
+
+    <script>
+        let numbers = [3, 5, 7, 9, 11];
+        numbers.push(13);
+        numbers.shift();
+        numbers.reverse();
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        document.getElementById('demo1').innerHTML = `
+            <p>Final Array: [${numbers.join(', ')}]</p>
+            <p>Sum of all numbers: ${sum}</p>
+        `;
+    </script>
+    
+    <h1>Question 4</h1>
+    <p class="result" id="currentYear"></p>
+    <p class="result" id="currentMonth"></p>
+    <p class="result" id="currentDayOfWeek"></p>
+    <p class="result" id="currentTime"></p>
+    <p class="result" id="formattedDate"></p>
+
+    <script>
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const dayOfWeek = now.toLocaleString('en-US', { weekday: 'long' });
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+
+        const day = String(now.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
+
+        document.getElementById('currentYear').innerText = "Current Year: " + year;
+        document.getElementById('currentMonth').innerText = "Current Month: " + month;
+        document.getElementById('currentDayOfWeek').innerText = "Current Day of the Week: " + dayOfWeek;
+        document.getElementById('currentTime').innerText = "Current Time: " + hour + ":" + (minute < 10 ? '0' + minute : minute);
+        document.getElementById('formattedDate').innerText = "Formatted Date (YYYY-MM-DD): " + formattedDate;
+    </script>
+    
+    <h1>Question 5</h1>
+    <p class="result" id="randomNumber"></p>
+    <p class="result" id="squareRoot"></p>
+    <p class="result" id="maxNumber"></p>
+    <p class="result" id="minNumber"></p>
+
+    <script>
+        const randomNumber = Math.random() * 100 + 1; 
+        const roundedNumber = Math.round(randomNumber); 
+        const numberToSqrt = 144;
+        const squareRoot = Math.sqrt(numberToSqrt);
+        const numbersSet = [4, 7, 1, 9, 2];
+        const maxNumber = Math.max(...numbersSet);
+        const minNumber = Math.min(...numbersSet);
+
+        document.getElementById('squareRoot').innerText = "Square Root of 144: " + squareRoot;
+        document.getElementById('maxNumber').innerText = "Maximum Number from the set: " + maxNumber;
+        document.getElementById('minNumber').innerText = "Minimum Number from the set: " + minNumber;
+    </script>
+</body>
+</html>
